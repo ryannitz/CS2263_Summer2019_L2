@@ -11,9 +11,9 @@
 COMPILER = gcc
 
 # The C flags to pass to gcc
-C_FLAGS = -Wall -Wextra
+C_FLAGS = -Wall -Wextra -std=c99
 
-# prepend the command with '@' so that Make does not print the command before running it 
+# prepend the command with '@' so that Make does not print the command before running it
 help:
 	@printf "available command:\n"
 	@printf "	make help               (this command)\n"
@@ -22,7 +22,7 @@ help:
 
 # link our .o files to make an executable
 ArraySort: ArraySort.o
-	$(COMPILER) $(C_FLAGS) -o ArraySort ArraySort.o 
+	$(COMPILER) $(C_FLAGS) -o ArraySort ArraySort.o
 
 # compile the `Stack.o` file
 ArraySort.o: ArraySort.c
